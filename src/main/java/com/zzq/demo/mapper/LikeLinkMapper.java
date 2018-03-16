@@ -1,5 +1,6 @@
 package com.zzq.demo.mapper;
 
+import com.github.pagehelper.Page;
 import com.zzq.demo.model.LikeLink;
 import org.apache.ibatis.annotations.Param;
 
@@ -22,4 +23,6 @@ public interface LikeLinkMapper {
     List<Map<String,Object>> findLikeLinkListByProgrammerId(Integer programmerId);
 
 	List<Map<String,Object>> findLikeLinkListByProgrammerIdAndName(@Param("programmerId") Integer programmerId,@Param("name") String name);
+
+    Page<List<Map<String,Object>>> findLikeLinkListByProgrammerIdAndNamePage(@Param("programmerId") Integer programmerId, @Param("name") String name);
 }

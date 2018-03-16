@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyBatis分页测试</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>当前页</td>
+                <td>${pageNum!}</td>
+            </tr>
+            <tr>
+                <td>总数据个数</td>
+                <td>${total!}</td>
+            </tr>
+            <tr>
+                <td>当前页数据个数</td>
+                <td>${pageSize!}</td>
+            </tr>
+            <tr>
+                <td>总页数</td>
+                <td>${pages!}</td>
+            </tr>
+            <tr>
+                <td>页码</td>
+                <td>
+                    <%for(var i=1;i<=pages;i++){%>
+                    <a href="${base}/user/page?pageNum=${i}"><% print(i);%></a>
+                    <%}%>
+                </td>
+            </tr>
+            <tr>
+                <td>当前页数据</td>
+                <td>${data!}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

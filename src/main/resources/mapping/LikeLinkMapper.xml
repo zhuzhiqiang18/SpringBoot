@@ -85,4 +85,7 @@
 	<select id="findLikeLinkListByProgrammerIdAndName" resultType="java.util.HashMap">
 		SELECT  * FROM programmer p,likeLink ll where ll.programmer_Id=p.id AND p.id=#{programmerId} AND p.name=#{name}
 	</select>
+  <select id="findLikeLinkListByProgrammerIdAndNamePage" resultType="java.util.HashMap">
+    SELECT  * FROM programmer p,likeLink ll where ll.programmer_Id=p.id AND p.id=#{programmerId} AND p.name=#{name} ORDER BY p.id
+  </select>
 </mapper>
