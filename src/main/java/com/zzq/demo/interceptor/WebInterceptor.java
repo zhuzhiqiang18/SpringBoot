@@ -23,6 +23,7 @@ public class WebInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("拦截器preHandle");
         return true;
     }
 
@@ -36,7 +37,7 @@ public class WebInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
-
+        System.out.println("拦截器postHandle");
     }
 
     /**
@@ -49,6 +50,6 @@ public class WebInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
-
+        System.out.println("拦截器afterCompletion");
     }
 }
