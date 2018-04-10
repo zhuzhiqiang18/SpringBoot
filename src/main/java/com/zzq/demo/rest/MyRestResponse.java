@@ -1,23 +1,18 @@
-package com.zzq.demo.exception;
+package com.zzq.demo.rest;
 
-/**
- * 自定义异常
- */
-public class RestException extends RuntimeException{
+public class MyRestResponse<T> {
     private int code;
     private String message;
-    private Object data;
+    private T data;
 
-    public RestException(int code, String message, Object data) {
+    public MyRestResponse(int code, String message) {
+        new MyRestResponse(code, message, null);
+    }
+
+    public MyRestResponse(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
-    }
-
-    public RestException(int code, String message) {
-        this.code = code;
-        this.message = message;
-        this.data = null;
     }
 
     public int getCode() {
@@ -36,11 +31,11 @@ public class RestException extends RuntimeException{
         this.message = message;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 }

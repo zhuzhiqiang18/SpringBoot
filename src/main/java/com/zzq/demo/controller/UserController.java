@@ -2,6 +2,7 @@ package com.zzq.demo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;
+import com.zzq.demo.exception.RestException;
 import com.zzq.demo.model.User;
 import com.zzq.demo.service.LikeLinkService;
 import com.zzq.demo.service.UserService;
@@ -19,7 +20,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController{
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -72,4 +73,9 @@ public class UserController {
 		modelAndView.setViewName("test");
 		return modelAndView;
 	}
+	@RequestMapping("/testException")
+	public ModelAndView testException(){
+		throw  new RestException(200,"测试异常拦截");
+	}
+
 }
